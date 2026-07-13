@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>APEX | Advanced</title>
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Victor+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="./img/marca-apex.png">
   <link rel="preload" as="image" href="./img/advanced-hero.jpg" media="(min-width: 701px)" fetchpriority="high">
   <link rel="preload" as="image" href="./img/advanced-hero-mobile.png" media="(max-width: 700px)" fetchpriority="high">
-  <link rel="stylesheet" href="./style.css">
+
+  <link rel="stylesheet" href="./style.css?v=20260713">
+  <script src="./script.js?v=20260713" defer></script>
 </head>
 
 <body id="top">
@@ -20,6 +25,12 @@
     <img src="./img/marca-apex.png" alt="APEX" decoding="async" loading="eager" fetchpriority="high">
   </div>
 </div>
+<script>
+  window.setTimeout(function () {
+    var loader = document.getElementById("pageLoader");
+    if (loader) loader.classList.add("is-hidden");
+  }, 1800);
+</script>
 
   <!-- CURSOR GLOW -->
   <div class="cursor-glow"></div>
@@ -51,16 +62,15 @@
 <section class="advanced-detail-hero">
 
   <div class="advanced-detail-bg">
-    <picture>
+    <picture class="advanced-detail-picture">
       <source media="(max-width: 700px)" srcset="./img/advanced-hero-mobile.png">
       <img
-        class="advanced-detail-img"
+        class="advanced-detail-img-responsive"
         src="./img/advanced-hero.jpg"
         alt="Piloto entrenando en simulador profesional"
-        loading="eager"
         decoding="async"
         fetchpriority="high"
-      >
+       loading="eager">
     </picture>
   </div>
 
@@ -812,6 +822,6 @@
 
 </section>
 
-  <script src="./script.js" defer></script>
+  
 </body>
 </html>

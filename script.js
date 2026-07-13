@@ -3,28 +3,19 @@
 // =========================
 
 const navbar = document.querySelector(".navbar");
-let navbarTicking = false;
-let navbarScrolled = null;
 
 function updateNavbar() {
-  navbarTicking = false;
   if (!navbar) return;
 
-  const shouldBeScrolled = window.scrollY > 24;
-  if (shouldBeScrolled === navbarScrolled) return;
-
-  navbarScrolled = shouldBeScrolled;
-  navbar.classList.toggle("is-scrolled", shouldBeScrolled);
+  if (window.scrollY > 24) {
+    navbar.classList.add("is-scrolled");
+  } else {
+    navbar.classList.remove("is-scrolled");
+  }
 }
 
-function requestNavbarUpdate() {
-  if (navbarTicking) return;
-  navbarTicking = true;
-  requestAnimationFrame(updateNavbar);
-}
-
-window.addEventListener("scroll", requestNavbarUpdate, { passive: true });
-requestNavbarUpdate();
+window.addEventListener("scroll", updateNavbar, { passive: true });
+updateNavbar();
 
 
 // =========================
@@ -34,21 +25,12 @@ requestNavbarUpdate();
 const cursorGlow = document.querySelector(".cursor-glow");
 
 if (cursorGlow) {
-  let cursorFrame = 0;
-  let cursorX = 0;
-  let cursorY = 0;
-
   window.addEventListener("mousemove", (event) => {
-    cursorX = event.clientX;
-    cursorY = event.clientY;
     cursorGlow.classList.add("is-visible");
 
-    if (cursorFrame) return;
-    cursorFrame = requestAnimationFrame(() => {
-      cursorGlow.style.transform = `translate3d(${cursorX - 17}px, ${cursorY - 17}px, 0)`;
-      cursorFrame = 0;
-    });
-  }, { passive: true });
+    cursorGlow.style.left = `${event.clientX}px`;
+    cursorGlow.style.top = `${event.clientY}px`;
+  });
 
   window.addEventListener("mouseleave", () => {
     cursorGlow.classList.remove("is-visible");
@@ -288,44 +270,37 @@ function initStatementSection() {
     });
   });
 
-  let statementTicking = false;
-  let lastVisibleCount = 0;
-
   function updateStatementReveal() {
-    statementTicking = false;
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
+
+    /*
+      La animación empieza cuando la sección llega arriba de la pantalla.
+      Mientras scrolleás dentro de la sección, la pantalla queda fija
+      por el position: sticky del CSS.
+    */
+
     const scrollInsideSection = -rect.top;
-    const maxScroll = Math.max(section.offsetHeight - windowHeight, 1);
+    const maxScroll = section.offsetHeight - windowHeight;
 
     let progress = scrollInsideSection / (maxScroll * 0.74);
     progress = Math.max(0, Math.min(progress, 1));
 
     const visibleCount = Math.floor(progress * chars.length);
-    if (visibleCount === lastVisibleCount) return;
 
-    if (visibleCount > lastVisibleCount) {
-      for (let i = lastVisibleCount; i < visibleCount; i += 1) {
-        chars[i]?.classList.add("is-visible");
+    chars.forEach((char, index) => {
+      if (index < visibleCount) {
+        char.classList.add("is-visible");
+      } else {
+        char.classList.remove("is-visible");
       }
-    } else {
-      for (let i = visibleCount; i < lastVisibleCount; i += 1) {
-        chars[i]?.classList.remove("is-visible");
-      }
-    }
-
-    lastVisibleCount = visibleCount;
+    });
   }
 
-  function requestStatementUpdate() {
-    if (statementTicking) return;
-    statementTicking = true;
-    requestAnimationFrame(updateStatementReveal);
-  }
+  updateStatementReveal();
 
-  requestStatementUpdate();
-  window.addEventListener("scroll", requestStatementUpdate, { passive: true });
-  window.addEventListener("resize", requestStatementUpdate);
+  window.addEventListener("scroll", updateStatementReveal, { passive: true });
+  window.addEventListener("resize", updateStatementReveal);
 }
 
 if (document.readyState === "loading") {
@@ -586,24 +561,13 @@ function initTech2Section() {
     });
   });
 
-  let techTicking = false;
-
-  function requestTechUpdate() {
-    if (techTicking) return;
-    techTicking = true;
-    requestAnimationFrame(() => {
-      techTicking = false;
-      updateTech2();
-    });
-  }
-
   setDefaultPanel();
-  requestTechUpdate();
+  updateTech2();
 
-  window.addEventListener("scroll", requestTechUpdate, { passive: true });
+  window.addEventListener("scroll", updateTech2, { passive: true });
   window.addEventListener("resize", () => {
     setDefaultPanel();
-    requestTechUpdate();
+    updateTech2();
   });
 }
 
@@ -910,6 +874,61 @@ if (document.readyState === "loading") {
   initAboutCircuitCardNextToPoint();
 }
 
+/* =========================================
+   ADVANCED - PROGRAMA DEL CURSO / SCROLL HORIZONTAL
+========================================= */
+
+(function () {
+  const section = document.querySelector('.advanced-program-section');
+  const sticky = document.querySelector('.advanced-program-sticky');
+  const track = document.getElementById('advancedProgramTrack');
+
+  if (!section || !sticky || !track) return;
+
+  function updateAdvancedProgramScroll() {
+    if (window.innerWidth <= 1024) {
+      track.style.transform = 'translate3d(0,0,0)';
+      return;
+    }
+
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const maxScrollableY = sectionHeight - window.innerHeight;
+
+    const currentY = window.scrollY - sectionTop;
+    const progress = Math.min(Math.max(currentY / maxScrollableY, 0), 1);
+
+    const trackScrollDistance = track.scrollWidth - sticky.clientWidth + 120;
+    const moveX = progress * trackScrollDistance;
+
+    track.style.transform = `translate3d(${-moveX}px, 0, 0)`;
+  }
+
+  window.addEventListener('scroll', updateAdvancedProgramScroll, { passive: true });
+  window.addEventListener('resize', updateAdvancedProgramScroll);
+  window.addEventListener('load', updateAdvancedProgramScroll);
+})();
+
+/* =========================================
+   REVEAL ON SCROLL
+========================================= */
+
+(function () {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, {
+    threshold: 0.18
+  });
+
+  items.forEach((item) => io.observe(item));
+})();
 
 /* =========================
    ADVANCED - COACHES ACORDEÓN
@@ -962,16 +981,14 @@ if (document.readyState === "loading") {
 
 /* =========================
    PANTALLA DE CARGA GLOBAL
-   transición breve, sin frenar la navegación
+   solo marca - 2 segundos
 ========================= */
 
 (function () {
   const loader = document.getElementById("pageLoader");
   if (!loader) return;
 
-  const ENTER_MIN_TIME = 180;
-  const NAVIGATION_DELAY = 160;
-  const startedAt = performance.now();
+  const LOADER_TIME = 1000;
 
   function showLoader() {
     loader.classList.remove("is-hidden");
@@ -981,44 +998,164 @@ if (document.readyState === "loading") {
     loader.classList.add("is-hidden");
   }
 
-  function hideAfterMinimum() {
-    const remaining = Math.max(0, ENTER_MIN_TIME - (performance.now() - startedAt));
-    window.setTimeout(hideLoader, remaining);
-  }
+  /* Al entrar a cualquier página */
+  document.addEventListener("DOMContentLoaded", () => {
+    showLoader();
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", hideAfterMinimum, { once: true });
-  } else {
-    hideAfterMinimum();
-  }
+    setTimeout(() => {
+      hideLoader();
+    }, LOADER_TIME);
+  });
 
-  window.addEventListener("pageshow", hideAfterMinimum, { once: true });
-
+  /* Al pasar entre index y advanced */
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
+
     if (!href) return;
 
-    const isExcluded =
-      href.startsWith("#") ||
-      href.startsWith("mailto:") ||
-      href.startsWith("tel:") ||
-      link.target === "_blank";
+    const isMail = href.startsWith("mailto:");
+    const isTel = href.startsWith("tel:");
+    const isAnchorOnly = href.startsWith("#");
+    const opensNewTab = link.target === "_blank";
 
-    const isInternalPage = href.includes("index.html") || href.includes("advanced.html");
-    if (isExcluded || !isInternalPage) return;
+    const goesToIndex = href.includes("index.html");
+    const goesToAdvanced = href.includes("advanced.html");
 
-    link.addEventListener("click", (event) => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (isMail || isTel || isAnchorOnly || opensNewTab) return;
+    if (!goesToIndex && !goesToAdvanced) return;
+
+    link.addEventListener("click", function (event) {
       event.preventDefault();
+
       showLoader();
-      window.setTimeout(() => {
-        window.location.assign(href);
-      }, NAVIGATION_DELAY);
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, LOADER_TIME);
     });
   });
 })();
 
+/* =========================
+   SOBRE APEX - TAP EN MOBILE
+========================= */
 
+(function () {
+  const section = document.querySelector("#sobre-apex");
+  if (!section) return;
+
+  const points = section.querySelectorAll(".track-point");
+  const popup = section.querySelector("#trackPopup");
+  const popupTitle = section.querySelector("#trackPopupTitle");
+  const popupText = section.querySelector("#trackPopupText");
+
+  if (!points.length || !popup || !popupTitle || !popupText) return;
+
+  points.forEach((point) => {
+    point.addEventListener("click", () => {
+      popupTitle.textContent = point.dataset.title || "";
+      popupText.textContent = point.dataset.text || "";
+      popup.classList.add("is-visible");
+
+      points.forEach((p) => p.classList.remove("is-active"));
+      point.classList.add("is-active");
+    });
+  });
+})();
+
+/* =========================
+   MOBILE - SOBRE APEX POPUP CERCA DEL NÚMERO
+   sin pisar otros números
+========================= */
+
+(function () {
+  const section = document.querySelector("#sobre-apex");
+  if (!section) return;
+
+  const points = Array.from(section.querySelectorAll(".track-point"));
+  const popup = section.querySelector("#trackPopup");
+  const popupTitle = section.querySelector("#trackPopupTitle");
+  const popupText = section.querySelector("#trackPopupText");
+
+  if (!points.length || !popup || !popupTitle || !popupText) return;
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 700px)").matches;
+  }
+
+const mobilePopupPositions = [
+  {
+    left: "26%",
+    top: "28%"
+  },
+  {
+    left: "34%",
+    top: "8%"
+  },
+  {
+    left: "54%",
+    top: "67%"
+  },
+  {
+    left: "3%",
+    top: "55%"
+  }
+];
+
+  function showMobilePopup(point, index) {
+    const pos = mobilePopupPositions[index];
+    if (!pos) return;
+
+    popupTitle.textContent = point.dataset.title || "";
+    popupText.textContent = point.dataset.text || "";
+
+    popup.style.setProperty("--mobile-popup-left", pos.left);
+    popup.style.setProperty("--mobile-popup-top", pos.top);
+
+    points.forEach((p) => p.classList.remove("is-active"));
+    point.classList.add("is-active");
+
+    popup.classList.add("is-visible");
+  }
+
+  function hideMobilePopup() {
+    popup.classList.remove("is-visible");
+    points.forEach((p) => p.classList.remove("is-active"));
+  }
+
+  points.forEach((point, index) => {
+    point.addEventListener("click", (event) => {
+      if (!isMobile()) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      showMobilePopup(point, index);
+    });
+
+    point.addEventListener("mouseenter", () => {
+      if (!isMobile()) return;
+      showMobilePopup(point, index);
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!isMobile()) return;
+    if (!section.contains(event.target)) {
+      hideMobilePopup();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (isMobile()) {
+      hideMobilePopup();
+    }
+  });
+
+  if (isMobile()) {
+    hideMobilePopup();
+  }
+})();
 
 /* =========================
    ADVANCED MOBILE - CLASE A CLASE FINAL
@@ -1127,19 +1264,53 @@ if (document.readyState === "loading") {
     point.addEventListener("mouseenter", () => openPopup(point, index));
   });
 
-  function closePopup() {
+  if (isMobile()) {
     popup.classList.remove("is-visible");
     points.forEach((p) => p.classList.remove("is-active"));
   }
-
-  document.addEventListener("click", (event) => {
-    if (isMobile() && !section.contains(event.target)) closePopup();
-  });
-
-  window.addEventListener("resize", closePopup);
-  if (isMobile()) closePopup();
 })();
 
+(function () {
+  const section = document.querySelector(".advanced-program-section");
+  const sticky = document.querySelector(".advanced-program-sticky");
+  const viewport = document.querySelector(".advanced-program-track-wrap");
+  const track = document.getElementById("advancedProgramTrack");
+  if (!section || !sticky || !viewport || !track) return;
+
+  let ticking = false;
+  const isMobile = () => window.matchMedia("(max-width: 700px)").matches;
+  const clamp = (value, min, max) => Math.max(min, Math.min(value, max));
+
+  function update() {
+    ticking = false;
+
+    if (!isMobile()) {
+      track.style.removeProperty("--advanced-mobile-x");
+      return;
+    }
+
+    const rect = section.getBoundingClientRect();
+    const total = Math.max(section.offsetHeight - window.innerHeight, 1);
+    const progress = clamp((-rect.top) / total, 0, 1);
+    const maxMove = Math.max(track.scrollWidth - window.innerWidth + 60, 0);
+    const x = -maxMove * progress;
+
+    track.style.setProperty("--advanced-mobile-x", `${x}px`);
+    track.style.transform = `translate3d(${x}px, 0, 0)`;
+  }
+
+  function requestUpdate() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  window.addEventListener("load", requestUpdate);
+  setTimeout(requestUpdate, 300);
+  requestUpdate();
+})();
 
 (function () {
   const section = document.querySelector(".tech2-section");
@@ -1160,6 +1331,21 @@ if (document.readyState === "loading") {
   fixMobileTechVisibility();
 })();
 
+// FIX DEFINITIVO: que el cue de los hotspots exista desde el estado 0
+// y no dependa de haber hecho hover antes.
+(function () {
+  const scene = document.querySelector(".tech2-scene");
+  if (!scene) return;
+
+  function keepHotspotsCueReady() {
+    scene.classList.add("hotspots-ready");
+  }
+
+  keepHotspotsCueReady();
+  window.addEventListener("load", keepHotspotsCueReady);
+  window.addEventListener("resize", keepHotspotsCueReady);
+  window.addEventListener("scroll", keepHotspotsCueReady, { passive: true });
+})();
 
 // AJUSTE FINAL VOLANTE:
 // Los hotspots NO aparecen mientras el volante está junto al texto institucional.
@@ -1177,13 +1363,9 @@ if (document.readyState === "loading") {
     return window.innerWidth <= 980;
   }
 
-  const hotspotNodes = Array.from(scene.querySelectorAll(".tech2-hotspot"));
-  let hotspotsVisible = null;
-
   function updateHotspotVisibility() {
     if (isMobile()) {
-      if (hotspotsVisible !== true) scene.classList.add("hotspots-ready");
-      hotspotsVisible = true;
+      scene.classList.add("hotspots-ready");
       return;
     }
 
@@ -1194,16 +1376,13 @@ if (document.readyState === "loading") {
 
     // Coincide con el momento en que el volante ya empieza a entrar en modo interactivo.
     // Antes de este punto queda limpio, sin botones sobre la imagen.
-    const shouldShow = progress >= 0.25;
-    if (shouldShow === hotspotsVisible) return;
-
-    hotspotsVisible = shouldShow;
-    scene.classList.toggle("hotspots-ready", shouldShow);
-
-    if (!shouldShow) {
+    if (progress >= 0.25) {
+      scene.classList.add("hotspots-ready");
+    } else {
+      scene.classList.remove("hotspots-ready");
       scene.classList.remove("has-zone");
       scene.dataset.zone = "";
-      hotspotNodes.forEach((hotspot) => {
+      document.querySelectorAll(".tech2-hotspot").forEach((hotspot) => {
         hotspot.classList.remove("is-selected", "active", "is-active");
       });
     }
