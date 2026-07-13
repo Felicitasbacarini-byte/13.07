@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX | Advanced</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Victor+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="./img/advanced-hero.jpg" media="(min-width: 701px)" fetchpriority="high">
+  <link rel="preload" as="image" href="./img/advanced-hero-mobile.png" media="(max-width: 700px)" fetchpriority="high">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="top">
+
+ <!-- PANTALLA DE CARGA -->
+<div class="page-loader" id="pageLoader">
+  <div class="page-loader-content">
+    <img src="./img/marca-apex.png" alt="APEX" decoding="async" loading="eager" fetchpriority="high">
+  </div>
+</div>
+
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow"></div>
+
+  <!-- NAVBAR MISMA QUE LA HOME -->
+  <header class="navbar">
+    <a href="index.html#top" class="brand" aria-label="Ir al inicio">
+      <img src="./img/marca-apex.png" alt="APEX" decoding="async" loading="eager" fetchpriority="high">
+    </a>
+
+    <nav class="nav-links" id="primaryNavigation">
+      <a href="#programa">Programa</a>
+      <a href="#programa-advanced">Clases</a>
+      <a href="#coaches">Coaches</a>
+    </nav>
+
+    <a href="#registro" class="btn btn-nav">Registrarme</a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="primaryNavigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+
+<!-- HERO ADVANCED -->
+<section class="advanced-detail-hero">
+
+  <div class="advanced-detail-bg">
+    <picture>
+      <source media="(max-width: 700px)" srcset="./img/advanced-hero-mobile.png">
+      <img
+        class="advanced-detail-img"
+        src="./img/advanced-hero.jpg"
+        alt="Piloto entrenando en simulador profesional"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      >
+    </picture>
+  </div>
+
+  <div class="advanced-detail-overlay"></div>
+
+  <div class="advanced-detail-content">
+
+    <div class="advanced-breadcrumb reveal reveal-delay-1">
+      <a href="index.html#top">Inicio</a>
+      <span>›</span>
+      <a href="index.html#cursos">Cursos</a>
+      <span>›</span>
+      <p>Élite</p>
+    </div>
+
+    <h1 class="reveal reveal-delay-2">Advanced</h1>
+
+    <p class="reveal reveal-delay-3">
+      Análisis de datos, lectura de telemetría y comparación de vueltas.
+    </p>
+
+    <div class="advanced-hero-actions reveal reveal-delay-4">
+      <a href="#registro" class="advanced-btn advanced-btn-primary">
+        Inscribirme
+      </a>
+
+      <a href="index.html#cursos" class="advanced-btn advanced-btn-secondary">
+        Ver programas
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="advanced-info-section advanced-info-rework" id="programa">
+
+  <div class="advanced-info-inner">
+
+    <div class="advanced-info-header advanced-info-rework-header">
+      <div class="section-tag advanced-tag reveal">
+        <span></span>
+        <p>02 Información</p>
+      </div>
+
+      <h2 class="reveal reveal-delay-1">¿De qué trata?</h2>
+    </div>
+
+    <div class="advanced-info-rework-layout">
+
+      <div class="advanced-info-copy reveal reveal-delay-2">
+        <p class="advanced-info-short">
+          Entrenamiento técnico para mejorar tu rendimiento con telemetría,
+          análisis de datos y comparación de vueltas.
+        </p>
+        <div class="advanced-info-method advanced-method-telemetry" aria-label="Recorrido metodológico del curso">
+          <div class="advanced-method-heading">
+            <span>Recorrido</span>
+          </div>
+
+          <div class="advanced-telemetry-panel">
+            <div class="advanced-telemetry-steps" aria-label="Etapas del entrenamiento">
+              <button
+                class="advanced-telemetry-step is-active"
+                type="button"
+                data-step="Paso 01"
+                data-title="Diagnóstico"
+                data-text="Detectar dónde se pierde tiempo."
+                data-bar="72%"
+              >
+                <span>01</span>
+                <em class="advanced-step-badge">Etapa activa</em>
+                <div>
+                  <strong>Diagnóstico</strong>
+                </div>
+                <i style="--fill: 72%"></i>
+              </button>
+
+              <button
+                class="advanced-telemetry-step"
+                type="button"
+                data-step="Paso 02"
+                data-title="Corrección"
+                data-text="Ajustar referencias por sector."
+                data-bar="58%"
+              >
+                <span>02</span>
+                <em class="advanced-step-badge">Etapa activa</em>
+                <div>
+                  <strong>Corrección</strong>
+                </div>
+                <i style="--fill: 58%"></i>
+              </button>
+
+              <button
+                class="advanced-telemetry-step"
+                type="button"
+                data-step="Paso 03"
+                data-title="Simulación"
+                data-text="Sostener ritmo y consistencia."
+                data-bar="84%"
+              >
+                <span>03</span>
+                <em class="advanced-step-badge">Etapa activa</em>
+                <div>
+                  <strong>Simulación</strong>
+                </div>
+                <i style="--fill: 84%"></i>
+              </button>
+
+              <button
+                class="advanced-telemetry-step"
+                type="button"
+                data-step="Paso 04"
+                data-title="Revisión"
+                data-text="Definir objetivos para seguir evolucionando."
+                data-bar="100%"
+              >
+                <span>04</span>
+                <em class="advanced-step-badge">Etapa activa</em>
+                <div>
+                  <strong>Revisión</strong>
+                </div>
+                <i style="--fill: 100%"></i>
+              </button>
+            </div>
+
+            <div class="advanced-telemetry-display" aria-live="polite">
+              <small id="advancedTelemetryStep">Paso 01</small>
+              <strong id="advancedTelemetryTitle">Diagnóstico</strong>
+              <p id="advancedTelemetryText">
+                Detectar dónde se pierde tiempo.
+              </p>
+
+              <div class="advanced-telemetry-meter">
+                <span>Progreso del entrenamiento</span>
+                <div>
+                  <i id="advancedTelemetryBar" style="width: 72%"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="advanced-course-sheet reveal reveal-delay-3" aria-label="Ficha técnica del curso Advanced">
+        <div class="advanced-sheet-top">
+          <span>Ficha del curso</span>
+          <strong>Advanced</strong>
+        </div>
+
+        <div class="advanced-sheet-grid">
+          <div class="advanced-sheet-item">
+            <small>Duración</small>
+            <p>8 semanas</p>
+          </div>
+
+          <div class="advanced-sheet-item">
+            <small>Nivel</small>
+            <p>Élite</p>
+          </div>
+
+          <div class="advanced-sheet-item">
+            <small>Modalidad</small>
+            <p>Coaching 1:1</p>
+          </div>
+
+          <div class="advanced-sheet-item">
+            <small>Enfoque</small>
+            <p>Telemetría</p>
+          </div>
+        </div>
+<div class="advanced-sheet-price">
+          <div>
+            <span>Precio total</span>
+            <strong>$160.000</strong>
+          </div>
+
+          <div class="advanced-sheet-discount">
+            <span>Transferencia</span>
+            <strong>$128.000</strong>
+          </div>
+        </div>
+
+        <a href="mailto:contacto@apex.com" class="advanced-info-btn advanced-sheet-btn">
+          Inscribirme
+        </a>
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="advanced-program-section section-dark-grid" id="programa-advanced">
+  <div class="advanced-program-sticky">
+    <div class="advanced-program-inner">
+      
+      <div class="advanced-program-head reveal">
+        <div class="section-kicker section-kicker-cyan">
+          <span class="kicker-square"></span>
+          <span>03 CLASE A CLASE</span>
+        </div>
+
+        <h2>PROGRAMA DEL CURSO</h2>
+
+        <p>
+          En cada clase se trabaja un aspecto clave del rendimiento:
+          desde la <br> telemetría básica hasta la estrategia de carrera,
+          combinando análisis, <br> práctica y seguimiento personalizado.
+        </p>
+      </div>
+
+      <div class="advanced-program-track-wrap">
+        <div class="advanced-program-track" id="advancedProgramTrack">
+          
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">01</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>FUNDAMENTOS DE TELEMETRÍA</h3>
+            <p>
+              Aprendés qué datos mirar, cómo interpretarlos y por qué son clave
+              para entender tu rendimiento en pista.
+            </p>
+          </article>
+
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">02</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>LECTURA DE CANALES</h3>
+            <p>
+              Trabajo sobre velocidad, frenado, aceleración y trazadas para
+              detectar patrones y errores repetidos.
+            </p>
+          </article>
+
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">03</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>COMPARACIÓN DE VUELTAS</h3>
+            <p>
+              Comparás vueltas propias y de referencia para ver diferencias
+              concretas en tiempo, decisión y ejecución.
+            </p>
+          </article>
+
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">04</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>TÉCNICA DE FRENADO</h3>
+            <p>
+              Ajuste de puntos de frenada, presión y liberación para ganar
+              consistencia y mejorar la entrada en curva.
+            </p>
+          </article>
+
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">05</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>TRACCIÓN Y SALIDA</h3>
+            <p>
+              Se analiza la aplicación del acelerador y la transferencia de peso
+              para optimizar la salida de cada curva.
+            </p>
+          </article>
+
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">06</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>RITMO DE CARRERA</h3>
+            <p>
+              Construcción de stints más regulares, gestión del error y lectura
+              del desgaste para sostener rendimiento.
+            </p>
+          </article>
+
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">07</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>ESTRATEGIA Y DECISIÓN</h3>
+            <p>
+              Interpretación del contexto de carrera para tomar mejores
+              decisiones en tiempo real y bajo presión.
+            </p>
+          </article>
+
+          <article class="advanced-program-card">
+            <div class="advanced-program-number-wrap">
+              <span class="advanced-program-number">08</span>
+              <span class="advanced-program-dot"></span>
+            </div>
+            <h3>SEGUIMIENTO PERSONALIZADO</h3>
+            <p>
+              Cierre del proceso con revisión individual, objetivos concretos
+              y próximos pasos para seguir evolucionando.
+            </p>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     04 COACHES
+========================= -->
+<section class="advanced-coaches-section" id="coaches">
+
+  <div class="advanced-coaches-inner">
+
+    <div class="advanced-coaches-header reveal">
+      <div class="section-tag advanced-tag">
+        <span></span>
+        <p>04 Coach</p>
+      </div>
+
+      <h2>Entrenamiento 1:1</h2>
+    </div>
+
+    <div class="coach-pixel-corner" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="coach-accordion reveal reveal-delay-1" data-active="0">
+
+      <!-- COACH 01 -->
+      <article class="coach-panel is-active">
+        <button class="coach-trigger" type="button" aria-label="Ver información de Bautista Comino">
+
+          <div class="coach-image">
+            <img src="./img/coach-facundo.png" alt="Bautista Comino" decoding="async" loading="lazy">
+          </div>
+
+          <div class="coach-panel-top">
+            <span>Coach</span>
+            <span>Diez años de experiencia</span>
+          </div>
+
+          <div class="coach-panel-content">
+            <h3>Bautista<br>Comino</h3>
+            <p>
+              Especializado en técnica de conducción y rendimiento.
+            </p>
+          </div>
+
+        </button>
+      </article>
+
+      <!-- COACH 02 -->
+      <article class="coach-panel">
+        <button class="coach-trigger" type="button" aria-label="Ver información de Lucia Di Prinzio">
+
+          <div class="coach-image">
+            <img src="./img/coach-lucia.png" alt="Lucia Di Prinzio" decoding="async" loading="lazy">
+          </div>
+
+          <div class="coach-panel-top">
+            <span>Coach</span>
+            <span>Telemetría avanzada</span>
+          </div>
+
+          <div class="coach-panel-content">
+            <h3>Lucia<br>Di Prinzio</h3>
+            <p>
+              Especializada en lectura de datos, consistencia y mejora progresiva.
+            </p>
+          </div>
+
+        </button>
+      </article>
+
+      <!-- COACH 03 -->
+      <article class="coach-panel">
+        <button class="coach-trigger" type="button" aria-label="Ver información de Delfina Bianchi">
+
+<div class="coach-image">
+  <img src="./img/coach-delfina.png" alt="Delfina Bianchi" decoding="async" loading="lazy">
+</div>
+
+          <div class="coach-panel-top">
+            <span>Coach</span>
+            <span>Estrategia de carrera</span>
+          </div>
+
+          <div class="coach-panel-content">
+            <h3>Delfina<br>Bianchi</h3>
+            <p>
+              Especializada en estrategia, ritmo de carrera y toma de decisiones.
+            </p>
+          </div>
+
+        </button>
+      </article>
+
+      <!-- COACH 04 -->
+      <article class="coach-panel">
+        <button class="coach-trigger" type="button" aria-label="Ver información de Mauricio Bacarini">
+
+<div class="coach-image">
+  <img src="./img/coach-mauricio.png" alt="Mauricio Bacarini" decoding="async" loading="lazy">
+</div>
+
+          <div class="coach-panel-top">
+            <span>Coach</span>
+            <span>Preparación competitiva</span>
+          </div>
+
+          <div class="coach-panel-content">
+            <h3>Mauricio<br>Bacarini</h3>
+            <p>
+              Especializado en entrenamiento competitivo y clasificación bajo presión.
+            </p>
+          </div>
+
+        </button>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     05 TESTIMONIOS
+========================= -->
+<section class="advanced-testimonials-section" id="testimonios">
+
+  <div class="advanced-testimonials-header reveal">
+    <div class="section-tag advanced-tag">
+      <span></span>
+      <p>05 Testimonios</p>
+    </div>
+
+    <h2>Experiencias en pista virtual</h2>
+
+    <p>
+      Pilotos que pasaron por Apex comparten cómo el entrenamiento,
+      la telemetría y el acompañamiento 1:1 transformaron su forma de competir.
+    </p>
+  </div>
+
+  <div class="testimonials-loop reveal reveal-delay-1">
+
+    <div class="testimonials-track">
+
+      <!-- GRUPO 1 -->
+      <article class="testimonial-card">
+        <span>01</span>
+        <p>
+          “Aprendí a entender mis errores vuelta por vuelta. Antes solo intentaba ir más rápido,
+          ahora sé exactamente dónde estoy perdiendo tiempo.”
+        </p>
+        <div>
+          <h3>Martín López</h3>
+          <small>Curso Advanced</small>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <span>02</span>
+        <p>
+          “La comparación de telemetría me cambió completamente la manera de entrenar.
+          Empecé a ser mucho más constante en tandas largas.”
+        </p>
+        <div>
+          <h3>Sofía Lopez</h3>
+          <small>Entrenamiento 1:1</small>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <span>03</span>
+        <p>
+          “El seguimiento del coach fue clave. No era solo bajar tiempos,
+          era entender por qué tomaba cada decisión dentro de la pista.”
+        </p>
+        <div>
+          <h3>Tomás Vidal</h3>
+          <small>Sim Racing Pro</small>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <span>04</span>
+        <p>
+          “Me ayudó muchísimo para competir con más seguridad. La práctica de clasificación
+          bajo presión fue de las partes que más me sirvió.”
+        </p>
+        <div>
+          <h3>Lucía Fernández</h3>
+          <small>Programa Élite</small>
+        </div>
+      </article>
+
+      <!-- GRUPO 2 REPETIDO PARA LOOP PERFECTO -->
+      <article class="testimonial-card">
+        <span>01</span>
+        <p>
+          “Aprendí a entender mis errores vuelta por vuelta. Antes solo intentaba ir más rápido,
+          ahora sé exactamente dónde estoy perdiendo tiempo.”
+        </p>
+        <div>
+          <h3>Martín López</h3>
+          <small>Curso Advanced</small>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <span>02</span>
+        <p>
+          “La comparación de telemetría me cambió completamente la manera de entrenar.
+          Empecé a ser mucho más constante en tandas largas.”
+        </p>
+        <div>
+          <h3>Sofía Herrera</h3>
+          <small>Entrenamiento 1:1</small>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <span>03</span>
+        <p>
+          “El seguimiento del coach fue clave. No era solo bajar tiempos,
+          era entender por qué tomaba cada decisión dentro de la pista.”
+        </p>
+        <div>
+          <h3>Tomás Vidal</h3>
+          <small>Sim Racing Pro</small>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <span>04</span>
+        <p>
+          “Me ayudó muchísimo para competir con más seguridad. La práctica de clasificación
+          bajo presión fue de las partes que más me sirvió.”
+        </p>
+        <div>
+          <h3>Lucía Fernández</h3>
+          <small>Programa Élite</small>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     05 PREGUNTAS FRECUENTES
+========================= -->
+<section class="advanced-faq-section" id="faq">
+
+  <div class="advanced-faq-inner">
+
+    <div class="advanced-faq-header reveal">
+      <div class="section-tag advanced-tag">
+        <span></span>
+        <p>05 Dudas</p>
+      </div>
+
+      <h2>Preguntas frecuentes</h2>
+    </div>
+
+    <div class="faq-list reveal reveal-delay-1">
+
+      <article class="faq-item is-open">
+        <button class="faq-question" type="button">
+          <span>¿Necesito experiencia previa en telemetría?</span>
+          <img src="./img/arrow-pixel.png" alt="" decoding="async" loading="lazy">
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            No es obligatorio tener experiencia avanzada, pero sí se recomienda contar
+            con una base de conducción en simulador para aprovechar mejor el programa.
+          </p>
+        </div>
+      </article>
+
+      <article class="faq-item">
+        <button class="faq-question" type="button">
+          <span>¿El curso es virtual o presencial?</span>
+          <img src="./img/arrow-pixel.png" alt="" decoding="async" loading="lazy">
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            El programa combina clases virtuales, análisis de datos y seguimiento
+            personalizado. Algunas prácticas pueden realizarse en simulador según disponibilidad.
+          </p>
+        </div>
+      </article>
+
+      <article class="faq-item">
+        <button class="faq-question" type="button">
+          <span>¿Qué necesito para empezar?</span>
+          <img src="./img/arrow-pixel.png" alt="" decoding="async" loading="lazy">
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Necesitás acceso a un simulador, conexión estable y disponibilidad para
+            realizar prácticas entre clases. El equipo técnico se ajusta según tu nivel.
+          </p>
+        </div>
+      </article>
+
+      <article class="faq-item">
+        <button class="faq-question" type="button">
+          <span>¿Incluye seguimiento personalizado?</span>
+          <img src="./img/arrow-pixel.png" alt="" decoding="async" loading="lazy">
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Sí. Cada piloto recibe devoluciones específicas sobre su rendimiento,
+            comparación de vueltas y objetivos concretos para seguir mejorando.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     CTA FINAL + FOOTER ADVANCED
+========================= -->
+<section class="advanced-end-section" id="registro">
+
+  <div class="advanced-end-bg" aria-hidden="true"></div>
+
+  <div class="advanced-end-cta reveal">
+    <h2>
+      Llevá tu rendimiento<br>
+      al siguiente nivel
+    </h2>
+
+    <a href="mailto:contacto@apex.com" class="advanced-end-btn">
+      Registrarme
+    </a>
+  </div>
+
+  <footer class="advanced-footer">
+
+    <div class="advanced-footer-inner">
+
+      <div class="advanced-footer-brand">
+
+        <a href="index.html#top" class="advanced-footer-logo">
+          <img src="./img/marca-apex.png" alt="APEX" decoding="async" loading="lazy">
+        </a>
+
+        <a href="./ui-kit.html" class="footer-ui-btn advanced-footer-ui-btn" aria-label="Abrir biblioteca UI Kit">
+          <span>UI KIT</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <div class="advanced-footer-social">
+
+          <a href="#" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3h4.6l5.1 6.8L18.5 3H22l-7.7 9 8.2 10h-4.7l-5.6-7.3L6 22H2.5l8-9.4L3 3Zm3.2 2 12.5 15h1.4L7.6 5H6.2Z"/>
+            </svg>
+          </a>
+
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+              <circle cx="12" cy="12" r="3.5"></circle>
+              <circle cx="17" cy="7" r="0.8"></circle>
+            </svg>
+          </a>
+
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="6.5" width="17" height="11" rx="2.6"></rect>
+              <path d="M10.3 9.3L15.2 12L10.3 14.7Z"></path>
+            </svg>
+          </a>
+
+        </div>
+
+        <p class="advanced-footer-copy">
+          © 2026 Apex Sim-Racing Academy. Todos los derechos reservados.<br>
+          Términos y Condiciones · Política de Privacidad · Política de Cookies<br>
+          La simulación es una herramienta de entrenamiento.
+        </p>
+
+      </div>
+
+      <nav class="advanced-footer-nav" aria-label="Footer navigation">
+
+        <div class="advanced-footer-col">
+          <h3><button class="footer-accordion-trigger" type="button" aria-expanded="false">Personal</button></h3>
+          <a href="#">Descripción</a>
+          <a href="#">Cuenta</a>
+          <a href="#">Seguridad</a>
+          <a href="#">Tarifas</a>
+          <a href="#">Ayuda</a>
+        </div>
+
+        <div class="advanced-footer-col">
+          <h3><button class="footer-accordion-trigger" type="button" aria-expanded="false">General</button></h3>
+          <a href="index.html#sobre-apex">Acerca de Apex</a>
+          <a href="#">Protección</a>
+          <a href="#">Blog</a>
+          <a href="#registro">Contacto</a>
+          <a href="#faq">Preguntas</a>
+        </div>
+
+        <div class="advanced-footer-col">
+          <h3><button class="footer-accordion-trigger" type="button" aria-expanded="false">Legales</button></h3>
+          <a href="#">Términos</a>
+          <a href="#">Condiciones</a>
+          <a href="#">Cookies</a>
+          <a href="#">Privacidad</a>
+        </div>
+
+      </nav>
+
+    </div>
+
+  </footer>
+
+</section>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

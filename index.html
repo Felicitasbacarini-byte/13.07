@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX | Sim Racing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Victor+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="./img/hero-home.png" media="(min-width: 701px)" fetchpriority="high">
+  <link rel="preload" as="image" href="./img/hero-home-mobile.png" media="(max-width: 700px)" fetchpriority="high">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="top">
+  
+  <!-- PANTALLA DE CARGA -->
+<div class="page-loader" id="pageLoader">
+  <div class="page-loader-content">
+    <img src="./img/marca-apex.png" alt="APEX" decoding="async" loading="eager" fetchpriority="high">
+  </div>
+</div>
+  
+  <!-- CURSOR GLOW -->
+<div class="cursor-glow"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <a href="#top" class="brand" aria-label="Ir al inicio">
+    <img src="./img/marca-apex.png" alt="APEX" decoding="async" loading="eager" fetchpriority="high">
+  </a>
+
+  <nav class="nav-links" id="primaryNavigation">
+    <a href="#cursos">Cursos</a>
+    <a href="#telemetria">Telemetría</a>
+    <a href="#simuladores">Simuladores</a>
+  </nav>
+
+  <a href="#registro" class="btn btn-nav">Registrarme</a>
+
+  <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="primaryNavigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero-section" id="top">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content reveal">
+    <h1>
+      Entrena como<br>
+      un piloto real
+    </h1>
+
+    <p>
+      La simulación ya no es un juego. Formamos pilotos virtuales
+      mediante telemetría, análisis y entrenamiento.
+    </p>
+
+    <a href="#cursos" class="btn btn-hero">Ver programas</a>
+  </div>
+</section>
+
+<section class="about-apex reveal" id="sobre-apex">
+  <div class="about-apex__inner">
+
+    <!-- IZQUIERDA -->
+    <div class="about-apex__content">
+      <div class="section-kicker about-apex__kicker">
+        <span class="section-kicker__square"></span>
+        <span class="section-kicker__text">02 SOBRE APEX</span>
+      </div>
+
+      <h2 class="about-apex__title">DE LA PANTALLA A LA PISTA</h2>
+
+      <p class="about-apex__lead">
+        En 2026 la diferencia entre el automovilismo virtual y el real es menor que nunca.
+        Las categorías incorporan simuladores profesionales para pilotos, perfeccionar técnicas,
+        desarrollar y analizar cada dato antes de que el semáforo se apague.
+      </p>
+
+      <p class="about-apex__text">
+        <strong>Apex</strong> nace para formar a quienes quieren llevar su rendimiento al siguiente nivel.
+        Enseñamos a interpretar telemetría, optimizar cada curva, comprender la dinámica del vehículo
+        y convertir los datos en decisiones más inteligentes.
+      </p>
+
+      <div class="about-apex__stats">
+        <div class="about-apex__stat">
+          <strong>+<span class="count-up" data-target="120">0</span></strong>
+          <span class="about-apex__stat-label">HORAS DE<br>SIMULACIÓN</span>
+        </div>
+
+        <div class="about-apex__stat">
+          <strong>+<span class="count-up" data-target="3110">0</span></strong>
+          <span class="about-apex__stat-label">ALUMNOS<br>ENTRENADOS</span>
+        </div>
+
+        <div class="about-apex__stat">
+          <strong>+<span class="count-up" data-target="500">0</span></strong>
+          <span class="about-apex__stat-label">PROGRAMAS<br>PARA TODOS</span>
+        </div>
+      </div>
+
+      <a href="#cursos" class="about-apex__button">CONOCENOS</a>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="about-apex__visual">
+      <div class="track-map" id="trackMap">
+        <img
+          src="./img/circuito-sobre-apex.png"
+          alt="Circuito Apex"
+          class="track-map__image" decoding="async" loading="lazy">
+
+        <!-- PUNTOS -->
+        <button
+          class="track-point"
+          type="button"
+          data-title="TELEMETRÍA"
+          data-text="Lectura de telemetría para detectar errores de frenada, aceleración y trazada."
+          data-popup-x="4"
+          data-popup-y="51"
+          style="left: 14%; top: 47%;"
+        >
+          01
+        </button>
+
+        <button
+          class="track-point"
+          type="button"
+          data-title="TRAZADAS"
+          data-text="Análisis de referencias visuales para mejorar la entrada, el vértice y la salida."
+          data-popup-x="47"
+          data-popup-y="13"
+          style="left: 63%; top: 31%;"
+        >
+          02
+        </button>
+
+        <button
+          class="track-point"
+          type="button"
+          data-title="COMPARATIVAS"
+          data-text="Comparación de vueltas para entender dónde se gana o se pierde tiempo."
+          data-popup-x="74"
+          data-popup-y="61"
+          style="left: 80%; top: 57%;"
+        >
+          03
+        </button>
+
+        <button
+          class="track-point"
+          type="button"
+          data-title="DECISIONES"
+          data-text="Interpretación de datos para convertir la información en decisiones más inteligentes."
+          data-popup-x="22"
+          data-popup-y="77"
+          style="left: 44%; top: 76%;"
+        >
+          04
+        </button>
+
+        <!-- POPUP -->
+        <div class="track-popup" id="trackPopup">
+          <h4 id="trackPopupTitle">TELEMETRÍA</h4>
+          <p id="trackPopupText">
+            Lectura de telemetría para detectar errores de frenada, aceleración y trazada.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#cursos" class="about-apex__button about-apex__button-mobile">CONOCENOS</a>
+
+  </div>
+</section>
+<section class="sponsors-section" id="sponsors">
+  <div class="sponsors-track">
+
+    <div class="sponsors-group">
+      <img src="./img/visa.png" alt="Visa" class="sponsor-logo sponsor-visa" decoding="async" loading="lazy">
+      <img src="./img/heineken.png" alt="Heineken" class="sponsor-logo sponsor-heineken" decoding="async" loading="lazy">
+      <img src="./img/santander.png" alt="Santander" class="sponsor-logo sponsor-santander" decoding="async" loading="lazy">
+      <img src="./img/gatorade.png" alt="Gatorade" class="sponsor-logo sponsor-gatorade" decoding="async" loading="lazy">
+    </div>
+
+    <!-- duplicado para que el loop sea infinito y fluido -->
+    <div class="sponsors-group" aria-hidden="true">
+      <img src="./img/visa.png" alt="" class="sponsor-logo sponsor-visa" decoding="async" loading="lazy">
+      <img src="./img/heineken.png" alt="" class="sponsor-logo sponsor-heineken" decoding="async" loading="lazy">
+      <img src="./img/santander.png" alt="" class="sponsor-logo sponsor-santander" decoding="async" loading="lazy">
+      <img src="./img/gatorade.png" alt="" class="sponsor-logo sponsor-gatorade" decoding="async" loading="lazy">
+    </div>
+
+  </div>
+</section>
+
+<section class="statement-section" id="statement">
+  <div class="statement-bg"></div>
+
+  <div class="statement-sticky">
+    <h2 class="statement-title" aria-label="Superando límites. Perfeccionando detalles. Compitiendo dentro y fuera de la pista.">
+      <span class="statement-line">
+        <span data-split>Superando </span><span class="accent" data-split>límites.</span>
+      </span>
+
+      <span class="statement-line">
+        <span data-split>Perfeccionando detalles.</span>
+      </span>
+
+      <span class="statement-line">
+        <span data-split>Compitiendo </span><span class="accent" data-split>dentro</span>
+      </span>
+
+      <span class="statement-line">
+        <span data-split>y </span><span class="accent" data-split>fuera</span><span data-split> de la pista.</span>
+      </span>
+    </h2>
+  </div>
+</section>
+
+<span id="telemetria" class="scroll-anchor" aria-hidden="true"></span>
+<section class="pillars-section" id="pilares">
+
+  <div class="pillars-header reveal">
+    <div class="section-tag pillars-tag">
+      <span></span>
+      <p>03 Formate</p>
+    </div>
+
+    <h2>Los tres pilares</h2>
+  </div>
+
+  <div class="pillars-accordion">
+
+    <article class="pillar-card is-active reveal" tabindex="0">
+      <img src="./img/pilar-iniciacion.png" alt="Iniciación" decoding="async" loading="lazy">
+
+      <div class="pillar-content">
+        <span class="pillar-number">01.</span>
+
+        <div class="pillar-text">
+          <h3>Iniciación</h3>
+          <p>
+            Fundamentos de la conducción, configuración, trazadas ideales
+            y los primeros análisis de rendimiento.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pillar-card reveal" tabindex="0">
+      <img src="./img/pilar-telemetria.png" alt="Telemetría" decoding="async" loading="lazy">
+
+      <div class="pillar-content">
+        <span class="pillar-number">02.</span>
+
+        <div class="pillar-text">
+          <h3>Telemetría</h3>
+          <p>
+            Interpretación de datos, comparación de vueltas, frenadas,
+            aceleración y optimización del tiempo por sector.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pillar-card reveal" tabindex="0">
+      <img src="./img/pilar-competicion.png" alt="Competición" decoding="async" loading="lazy">
+
+      <div class="pillar-content">
+        <span class="pillar-number">03.</span>
+
+        <div class="pillar-text">
+          <h3>Competición</h3>
+          <p>
+            Práctica avanzada, estrategia de carrera, presión competitiva
+            y preparación para correr en simuladores profesionales.
+          </p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="tech2-section" id="simuladores">
+  <div class="tech2-scene hotspots-ready">
+
+    <!-- TEXTO INSTITUCIONAL -->
+    <div class="tech2-copy">
+      <div class="section-tag tech2-tag">
+        <span></span>
+        <p>04 Tecnología</p>
+      </div>
+
+      <h2>Tecnología de élite</h2>
+
+      <p>
+        En APEX contamos con simuladores de <strong>última generación</strong>,
+        hardware de alto rendimiento y software profesional de análisis para
+        ofrecer una experiencia de entrenamiento lo más cercana posible al
+        automovilismo real.
+      </p>
+
+      <p>
+        Cada detalle está pensado para reproducir con precisión
+        <strong>las sensaciones de la pista</strong>, desde la respuesta del volante
+        hasta el estudio de la telemetría en tiempo real.
+      </p>
+    </div>
+
+    <!-- VOLANTE -->
+    <div class="tech2-wheel-wrap" id="techWheelWrap">
+
+      <div class="tech2-hint" id="tech2Hint">
+        <span class="tech2-hint-dot"></span>
+        <span class="tech2-hint-desktop">Scroll + hover para explorar</span>
+        <span class="tech2-hint-mobile">Tocá una zona del volante</span>
+      </div>
+
+      <div class="tech2-wheel">
+        <img class="tech2-wheel-base" src="./img/volante-base.png" alt="Volante de sim racing" decoding="async" loading="lazy">
+
+        <!-- ILUMINACIÓN POR ZONAS -->
+        <div class="tech2-wheel-glow part-screen" aria-hidden="true"></div>
+        <div class="tech2-wheel-glow part-bottom" aria-hidden="true"></div>
+        <div class="tech2-wheel-glow part-left" aria-hidden="true"></div>
+        <div class="tech2-wheel-glow part-right" aria-hidden="true"></div>
+
+        <!-- ZONAS INTERACTIVAS -->
+        <button class="tech2-hotspot hotspot-screen" data-zone="screen" aria-label="Pantalla del volante"></button>
+        <button class="tech2-hotspot hotspot-bottom" data-zone="bottom" aria-label="Controles inferiores"></button>
+        <button class="tech2-hotspot hotspot-left" data-zone="left" aria-label="Controles del sector izquierdo"></button>
+        <button class="tech2-hotspot hotspot-right" data-zone="right" aria-label="Controles del sector derecho"></button>
+      </div>
+    </div>
+
+    <!-- PANEL DE INFO -->
+    <aside class="tech2-panel" id="tech2Panel">
+      <span id="tech2Eyebrow">Interacción guiada</span>
+
+      <h3 id="tech2Title">Explorá el volante</h3>
+
+      <p id="tech2Text">
+        Hacé scroll y pasá el cursor sobre cada zona del volante.
+      </p>
+
+      <div class="tech2-data" id="tech2Data">
+        <small>Display</small>
+        <small>Inputs</small>
+        <small>Precisión</small>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<section class="courses-section courses-section-tech" id="cursos">
+
+  <div class="courses-pixels courses-pixels-top" aria-hidden="true"></div>
+
+  <div class="courses-inner">
+
+    <div class="courses-header">
+      <div class="section-tag courses-tag">
+        <span></span>
+        <p>05 Programas</p>
+      </div>
+
+      <h2>Elegí tu nivel de entrenamiento</h2>
+
+      <p class="courses-header-copy">
+        Cada programa acompaña una etapa distinta del piloto: fundamentos,
+        análisis y rendimiento competitivo.
+      </p>
+    </div>
+
+    <div class="courses-grid courses-tech-grid">
+
+      <!-- ROOKIE -->
+      <article class="course-card course-tech-card" data-level="01">
+        <span class="course-level course-level-top">Nivel 01</span>
+
+        <div class="course-image course-image-rookie">
+          <img src="./img/curso-rookie.png" alt="Curso Rookie" decoding="async" loading="lazy">
+        </div>
+
+        <div class="course-content course-tech-content">
+          <h3>Rookie</h3>
+
+          <p class="course-ideal">
+            Ideal para quienes quieren dar sus primeros pasos en simulación competitiva.
+          </p>
+
+          <div class="course-meta-grid">
+            <div class="course-meta-box">
+              <span>Duración</span>
+              <strong>4 semanas</strong>
+            </div>
+
+            <div class="course-meta-box">
+              <span>Objetivo</span>
+              <strong>Trazadas y frenadas</strong>
+            </div>
+          </div>
+
+          <div class="course-complexity" aria-label="Complejidad 2 de 5">
+            <span>Complejidad</span>
+            <div class="complexity-bars">
+              <i class="is-filled"></i>
+              <i class="is-filled"></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+
+          <strong class="course-price">$60.000</strong>
+
+          <a href="#registro" class="course-btn">
+            Ver más <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- MEDIO -->
+      <article class="course-card course-tech-card" data-level="02">
+        <span class="course-level course-level-top">Nivel 02</span>
+
+        <div class="course-image course-image-medio">
+          <img src="./img/curso-medio.png" alt="Curso Medio" decoding="async" loading="lazy">
+        </div>
+
+        <div class="course-content course-tech-content">
+          <h3>Medio</h3>
+
+          <p class="course-ideal">
+            Ideal para quienes ya corrieron ligas online y necesitan consistencia y resultados.
+          </p>
+
+          <div class="course-meta-grid">
+            <div class="course-meta-box">
+              <span>Duración</span>
+              <strong>6 semanas</strong>
+            </div>
+
+            <div class="course-meta-box">
+              <span>Objetivo</span>
+              <strong>Consistencia</strong>
+            </div>
+          </div>
+
+          <div class="course-complexity" aria-label="Complejidad 3 de 5">
+            <span>Complejidad</span>
+            <div class="complexity-bars">
+              <i class="is-filled"></i>
+              <i class="is-filled"></i>
+              <i class="is-filled"></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+
+          <strong class="course-price">$90.000</strong>
+
+          <a href="#registro" class="course-btn">
+            Ver más <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- ADVANCED -->
+      <article class="course-card course-tech-card course-card-featured" data-level="03">
+        <span class="course-badge">Más visto</span>
+        <span class="course-level course-level-top">Nivel 03</span>
+
+        <div class="course-image course-image-advanced">
+          <img src="./img/curso-advanced.png" alt="Curso Advanced" decoding="async" loading="lazy">
+        </div>
+
+        <div class="course-content course-tech-content">
+          <h3>Advanced</h3>
+
+          <p class="course-ideal">
+            Ideal para quienes buscan competir con análisis de datos y preparación avanzada.
+          </p>
+
+          <div class="course-meta-grid">
+            <div class="course-meta-box">
+              <span>Duración</span>
+              <strong>8 semanas</strong>
+            </div>
+
+            <div class="course-meta-box">
+              <span>Objetivo</span>
+              <strong>Telemetría avanzada</strong>
+            </div>
+          </div>
+
+          <div class="course-complexity" aria-label="Complejidad 5 de 5">
+            <span>Complejidad</span>
+            <div class="complexity-bars">
+              <i class="is-filled"></i>
+              <i class="is-filled"></i>
+              <i class="is-filled"></i>
+              <i class="is-filled"></i>
+              <i class="is-filled"></i>
+            </div>
+          </div>
+
+          <strong class="course-price">$160.000</strong>
+
+          <a href="advanced.html" class="course-btn">
+            Ver más <span>→</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+  <div class="courses-pixels courses-pixels-bottom" aria-hidden="true"></div>
+
+</section>
+
+
+<section class="f3-section" id="formula3">
+  <div class="f3-inner">
+
+    <div class="f3-top">
+
+      <div class="f3-copy">
+        <div class="section-tag f3-tag">
+          <span></span>
+          <p>06 Fórmula 3</p>
+        </div>
+
+        <h2>Road to real track</h2>
+
+        <p>
+          <strong>Nuestro objetivo para el 2027</strong> es vincular a nuestros
+          mejores talentos con equipos de Fórmula 3 para pruebas reales en pista.
+        </p>
+
+        <a href="#registro" class="f3-btn">Registrarme</a>
+      </div>
+
+      <div class="f3-hero">
+        <img src="./img/road-main.png" alt="Sim racing conectado con Fórmula 3" decoding="async" loading="lazy">
+      </div>
+
+    </div>
+
+    <div class="f3-cards-track" data-drag-scroll>
+
+      <article class="f3-card">
+        <div class="f3-card-content">
+          <h3>Entrenamiento</h3>
+          <p>
+            Fundamentos de conducción, trazadas, frenada, aceleración y control del auto.
+          </p>
+        </div>
+
+        <div class="f3-card-media">
+          <img src="./img/road-entrenamiento.png" alt="Circuito de entrenamiento" decoding="async" loading="lazy">
+        </div>
+      </article>
+
+      <article class="f3-card">
+        <div class="f3-card-content">
+          <h3>Telemetría</h3>
+          <p>
+            Análisis de datos reales: velocidad, inputs, frenado, aceleración y consistencia.
+          </p>
+        </div>
+
+        <div class="f3-card-media">
+          <img src="./img/road-telemetria.png" alt="Gráfico de telemetría" decoding="async" loading="lazy">
+        </div>
+      </article>
+
+      <article class="f3-card">
+        <div class="f3-card-content">
+          <h3>Ranking Apex</h3>
+          <p>
+            Los pilotos son evaluados por tiempos, regularidad, evolución, técnica y toma de decisiones.
+          </p>
+        </div>
+
+        <div class="f3-card-media">
+          <img src="./img/road-ranking.png" alt="Ranking Apex" decoding="async" loading="lazy">
+        </div>
+      </article>
+
+      <article class="f3-card">
+        <div class="f3-card-content">
+          <h3>Test real 2027</h3>
+          <p>
+            Los mejores perfiles accederán a instancias de prueba y scouting para el salto al automovilismo real.
+          </p>
+        </div>
+
+        <div class="f3-card-media">
+          <img src="./img/road-test.png" alt="Auto de Fórmula 3" decoding="async" loading="lazy">
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="circuits-section" id="circuitos">
+  <div class="circuits-sticky">
+
+    <div class="circuits-header">
+      <div class="section-tag circuits-tag">
+        <span></span>
+        <p>07 Circuitos</p>
+      </div>
+
+      <h2>Los circuitos reales</h2>
+    </div>
+
+    <div class="circuits-viewport">
+      <div class="circuits-track" id="circuitsTrack">
+
+        <article class="circuit-card circuit-card-wide">
+          <img src="./img/shanghai.jpg" alt="Shanghai International Circuit" decoding="async" loading="lazy">
+          <div class="circuit-info">
+            <h3>Shanghai</h3>
+            <p>China</p>
+          </div>
+        </article>
+
+        <article class="circuit-card circuit-card-tall">
+          <img src="./img/melbourne.jpg" alt="Albert Park Circuit" decoding="async" loading="lazy">
+          <div class="circuit-info">
+            <h3>Albert Park</h3>
+            <p>Australia</p>
+          </div>
+        </article>
+
+        <article class="circuit-card circuit-card-small">
+          <img src="./img/silverstone.jpg" alt="Silverstone Circuit" decoding="async" loading="lazy">
+          <div class="circuit-info">
+            <h3>Silverstone</h3>
+            <p>Reino Unido</p>
+          </div>
+        </article>
+
+        <article class="circuit-card circuit-card-wide circuit-card-low">
+          <img src="./img/montecarlo.jpg" alt="Circuit de Monaco" decoding="async" loading="lazy">
+          <div class="circuit-info">
+            <h3>Monaco</h3>
+            <p>Mónaco</p>
+          </div>
+        </article>
+
+        <article class="circuit-card circuit-card-tall">
+          <img src="./img/baku.jpg" alt="Baku City Circuit" decoding="async" loading="lazy">
+          <div class="circuit-info">
+            <h3>Baku</h3>
+            <p>Azerbaiyán</p>
+          </div>
+        </article>
+
+        <article class="circuit-card circuit-card-small">
+          <img src="./img/spielberg.jpg" alt="Red Bull Ring" decoding="async" loading="lazy">
+          <div class="circuit-info">
+            <h3>Red Bull Ring</h3>
+            <p>Austria</p>
+          </div>
+        </article>
+
+        <article class="circuit-card circuit-card-wide">
+          <img src="./img/suzuka.jpg" alt="Suzuka Circuit" decoding="async" loading="lazy">
+          <div class="circuit-info">
+            <h3>Suzuka</h3>
+            <p>Japón</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA FINAL + FOOTER -->
+<section class="final-cta" id="registro">
+
+  <div class="final-cta-inner reveal">
+    <h2>¿Listo para dar el<br>siguiente paso?</h2>
+
+    <a href="#top" class="final-cta-btn">
+      Registrarme
+    </a>
+  </div>
+
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a href="#top" class="footer-logo" aria-label="APEX inicio">
+        <img src="./img/marca-apex.png" alt="APEX" decoding="async" loading="lazy">
+      </a>
+
+      <a href="./ui-kit.html" class="footer-ui-btn" aria-label="Abrir biblioteca UI Kit">
+        <span>UI KIT</span>
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <div class="footer-social">
+        <a href="#" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 3h4.6l5.1 6.8L18.5 3H22l-7.7 9 8.2 10h-4.7l-5.6-7.3L6 22H2.5l8-9.4L3 3Zm3.2 2 12.5 15h1.4L7.6 5H6.2Z"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <circle cx="17" cy="7" r="0.8"></circle>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="6.5" width="17" height="11" rx="2.6"></rect>
+            <path d="M10.3 9.3L15.2 12L10.3 14.7Z"></path>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer-legal-small">
+        © 2026 Apex Sim-Racing Academy. Todos los derechos reservados.<br>
+        Términos y Condiciones · Política de Privacidad · Política de Cookies<br>
+        La simulación es una herramienta de entrenamiento.
+      </p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+
+      <div class="footer-col">
+        <h3><button class="footer-accordion-trigger" type="button" aria-expanded="false">Personal</button></h3>
+        <a href="#">Descripción</a>
+        <a href="#">Cuenta</a>
+        <a href="#">Seguridad</a>
+        <a href="#">Tarifas</a>
+        <a href="#">Ayuda</a>
+      </div>
+
+      <div class="footer-col">
+        <h3><button class="footer-accordion-trigger" type="button" aria-expanded="false">General</button></h3>
+        <a href="#sobre-apex">Acerca de Apex</a>
+        <a href="#">Protección</a>
+        <a href="#">Blog</a>
+        <a href="#registro">Contacto</a>
+        <a href="#">Preguntas</a>
+      </div>
+
+      <div class="footer-col">
+        <h3><button class="footer-accordion-trigger" type="button" aria-expanded="false">Legales</button></h3>
+        <a href="#">Términos</a>
+        <a href="#">Condiciones</a>
+        <a href="#">Cookies</a>
+        <a href="#">Privacidad</a>
+      </div>
+
+    </nav>
+
+  </div>
+
+</footer>
+
+<script src="./script.js" defer></script>
+</body>
+</html>

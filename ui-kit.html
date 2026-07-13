@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX | UI Kit</title>
+  <link rel="stylesheet" href="./ui-kit.css" />
+</head>
+<body id="top">
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="uk-navbar">
+    <a href="index.html#top" class="uk-brand" aria-label="Volver al inicio">
+      <img src="./img/marca-apex.png" alt="APEX" />
+    </a>
+
+    <nav class="uk-nav-links" id="ukNavMenu" aria-label="Navegación UI Kit">
+      <a href="#tipografias">Tipografías</a>
+      <a href="#paleta">Paleta</a>
+      <a href="#cards">Cards</a>
+      <a href="#imagenes">Imágenes</a>
+      <a href="#interacciones">Interacciones</a>
+    </nav>
+
+    <a href="index.html#top" class="uk-btn uk-btn-small">Registrarme</a>
+
+    <button class="uk-menu-toggle" id="ukMenuToggle" type="button" aria-controls="ukNavMenu" aria-expanded="false" aria-label="Abrir navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="uk-hero section-block reveal">
+      <div class="breadcrumb">Inicio <span>›</span> Biblioteca <span>›</span> Identidad</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Interfaz para el rendimiento</h1>
+          <p>
+            Una biblioteca visual creada para traducir el universo del automovilismo virtual
+            en una experiencia digital clara, técnica y competitiva.
+          </p>
+        </div>
+        <div class="hero-marker" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="tipografias">
+      <div class="section-label"><span></span><p>01 Tipografías</p></div>
+      <h2>Criterio tipográfico</h2>
+      <p class="section-lead">
+        Victor Mono para identidad visual, títulos y destacados; Inter para lectura, datos y componentes funcionales.
+      </p>
+
+      <div class="type-system">
+        <aside class="type-info-list">
+          <article>
+            <h3>Título hero</h3>
+            <p>Victor Mono Medium<br>clamp(60px, 7.4vw, 85px)<br>Line-height: 1 / 0.96</p>
+          </article>
+          <article>
+            <h3>Título detalle</h3>
+            <p>Victor Mono Medium<br>clamp(60px, 7.4vw, 85px)<br>Line-height: 1 / 0.96</p>
+          </article>
+          <article>
+            <h3>Bajadas</h3>
+            <p>Inter Regular<br>clamp(17px, 1.25vw, 22px)<br>Line-height: 1.22</p>
+          </article>
+          <article>
+            <h3>Títulos sección</h3>
+            <p>Victor Mono Medium<br>clamp(38px, 3vw, 56px)<br>Line-height: 0.95 / 1</p>
+          </article>
+          <article>
+            <h3>Tag de sección</h3>
+            <p>Victor Mono Regular<br>12px<br>Line-height: 1</p>
+          </article>
+          <article>
+            <h3>Texto base</h3>
+            <p>Inter Light<br>clamp(15px, 1.05vw, 18px)<br>Line-height: 1.34–1.38</p>
+          </article>
+          <article>
+            <h3>Navbar links</h3>
+            <p>Inter Regular<br>16px<br>Line-height: 1</p>
+          </article>
+          <article>
+            <h3>Botones</h3>
+            <p>Inter Bold<br>14px<br>Line-height: 1</p>
+          </article>
+        </aside>
+
+        <div class="type-samples">
+          <div class="sample-row sample-hero-title">
+            <span>Entrena como<br>un piloto real</span>
+          </div>
+          <div class="sample-row sample-detail-title">
+            <span>Advanced</span>
+          </div>
+          <div class="sample-row sample-body">
+            <span>La simulación ya no es un juego. Formamos pilotos virtuales mediante telemetría, análisis y entrenamiento.</span>
+          </div>
+          <div class="sample-row sample-section-title">
+            <span>Tecnología de élite</span>
+          </div>
+          <div class="sample-row sample-tag">
+            <span>04 Tecnología</span>
+          </div>
+          <div class="sample-row sample-text-base">
+            <span>Apex nace para formar a quienes quieren llevar su rendimiento al siguiente nivel.</span>
+          </div>
+          <div class="sample-row sample-navbar">
+            <div class="mini-navbar">
+              <a>Cursos</a><a>Telemetría</a><a>Simuladores</a><button>Registrarme</button>
+            </div>
+          </div>
+          <div class="sample-row sample-buttons">
+            <button>Registrarme</button>
+            <button>Ver más <span>→</span></button>
+            <button>UI Kit <span>→</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block color-section reveal" id="paleta">
+      <div class="section-label"><span></span><p>02 Paleta</p></div>
+      <h2>Sistema cromático</h2>
+      <p class="section-lead">La paleta combina una base oscura e inmersiva con acentos de alta visibilidad.</p>
+
+      <div class="color-grid">
+        <article class="color-card neon">
+          <span>--neon</span>
+          <div>
+            <h3>Amarillo</h3>
+            <p>#E4FF14<br>Color de acento principal; se usa en botones, datos importantes, hovers y llamados a la acción.</p>
+          </div>
+        </article>
+        <article class="color-card cyan">
+          <span>--cyan</span>
+          <div>
+            <h3>Celeste</h3>
+            <p>#50AEB0<br>Color secundario del sistema. Funciona como señal técnica para etiquetas, puntos interactivos y navegación.</p>
+          </div>
+        </article>
+        <article class="color-card white">
+          <span>--white</span>
+          <div>
+            <h3>Blanco</h3>
+            <p>#FFFFFF<br>Color principal para lectura. Se utiliza en textos, títulos y elementos que necesitan máxima claridad.</p>
+          </div>
+        </article>
+        <article class="color-card black">
+          <span>--black</span>
+          <div>
+            <h3>Negro</h3>
+            <p>#000000<br>Base del sistema. Refuerza la idea de tecnología, precisión y profundidad.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="cards">
+      <div class="section-label"><span></span><p>03 Cards</p></div>
+      <h2>Componentes de contenido</h2>
+      <p class="section-lead">
+        Las cards del sistema ordenan programas, información del curso y testimonios usando las estructuras reales aplicadas en la web.
+      </p>
+
+      <div class="cards-group">
+        <div class="cards-group-head">
+          <span>Cards de cursos</span>
+          <p>Versión de la sección “Nuestros cursos”: placas técnicas cian con nivel, objetivo, complejidad, precio y CTA.</p>
+        </div>
+
+        <div class="kit-course-tech-grid">
+          <article class="kit-course-tech-card">
+            <div class="kit-course-level">Nivel 01</div>
+
+            <div class="kit-course-image">
+              <img src="./img/curso-rookie.png" alt="Curso Rookie">
+            </div>
+
+            <div class="kit-course-body">
+              <h3>Rookie</h3>
+              <p>Ideal para quienes quieren dar sus primeros pasos y construir una base competitiva.</p>
+
+              <div class="kit-course-specs">
+                <div>
+                  <span>Duración</span>
+                  <strong>4 semanas</strong>
+                </div>
+                <div>
+                  <span>Objetivo</span>
+                  <strong>Trazadas y frenadas</strong>
+                </div>
+              </div>
+
+              <div class="kit-complexity">
+                <span>Complejidad</span>
+                <div aria-label="Complejidad 2 de 5">
+                  <i></i><i></i><i class="is-off"></i><i class="is-off"></i><i class="is-off"></i>
+                </div>
+              </div>
+
+              <strong class="kit-course-price">$60.000</strong>
+              <a href="#">Ver más <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="kit-course-tech-card">
+            <div class="kit-course-level">Nivel 02</div>
+
+            <div class="kit-course-image">
+              <img src="./img/curso-medio.png" alt="Curso Medio">
+            </div>
+
+            <div class="kit-course-body">
+              <h3>Medio</h3>
+              <p>Ideal para quienes ya corrieron ligas online y necesitan consistencia y resultados.</p>
+
+              <div class="kit-course-specs">
+                <div>
+                  <span>Duración</span>
+                  <strong>6 semanas</strong>
+                </div>
+                <div>
+                  <span>Objetivo</span>
+                  <strong>Consistencia</strong>
+                </div>
+              </div>
+
+              <div class="kit-complexity">
+                <span>Complejidad</span>
+                <div aria-label="Complejidad 3 de 5">
+                  <i></i><i></i><i></i><i class="is-off"></i><i class="is-off"></i>
+                </div>
+              </div>
+
+              <strong class="kit-course-price">$90.000</strong>
+              <a href="#">Ver más <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="kit-course-tech-card">
+            <div class="kit-course-level">Nivel 03</div>
+            <span class="kit-course-badge">Más visto</span>
+
+            <div class="kit-course-image">
+              <img src="./img/curso-advanced.png" alt="Curso Advanced">
+            </div>
+
+            <div class="kit-course-body">
+              <h3>Advanced</h3>
+              <p>Ideal para quienes buscan competir con análisis de datos y preparación avanzada.</p>
+
+              <div class="kit-course-specs">
+                <div>
+                  <span>Duración</span>
+                  <strong>8 semanas</strong>
+                </div>
+                <div>
+                  <span>Objetivo</span>
+                  <strong>Telemetría avanzada</strong>
+                </div>
+              </div>
+
+              <div class="kit-complexity">
+                <span>Complejidad</span>
+                <div aria-label="Complejidad 5 de 5">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+
+              <strong class="kit-course-price">$160.000</strong>
+              <a href="#">Ver más <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="cards-group">
+        <div class="cards-group-head">
+          <span>Cards de información Advanced</span>
+          <p>Versión de la sección 02: panel de telemetría interactivo + ficha técnica del curso.</p>
+        </div>
+
+        <div class="kit-advanced-info-demo">
+          <div class="kit-advanced-copy">
+            <p class="kit-advanced-short">
+              Entrenamiento técnico para mejorar tu rendimiento con telemetría,
+              análisis de datos y comparación de vueltas.
+            </p>
+
+            <div class="kit-telemetry-module" data-kit-telemetry-demo>
+              <div class="kit-telemetry-steps">
+                <button class="is-active" type="button" data-step="Paso 01" data-title="Diagnóstico" data-text="Detectar dónde se pierde tiempo." data-bar="72%">
+                  <span>01</span>
+                  <em>Etapa activa</em>
+                  <div>
+                    <strong>Diagnóstico</strong>
+                  </div>
+                  <i style="--fill:72%"></i>
+                </button>
+
+                <button type="button" data-step="Paso 02" data-title="Corrección" data-text="Ajustar referencias por sector." data-bar="58%">
+                  <span>02</span>
+                  <em>Etapa activa</em>
+                  <div>
+                    <strong>Corrección</strong>
+                  </div>
+                  <i style="--fill:58%"></i>
+                </button>
+
+                <button type="button" data-step="Paso 03" data-title="Simulación" data-text="Sostener ritmo y consistencia." data-bar="84%">
+                  <span>03</span>
+                  <em>Etapa activa</em>
+                  <div>
+                    <strong>Simulación</strong>
+                  </div>
+                  <i style="--fill:84%"></i>
+                </button>
+
+                <button type="button" data-step="Paso 04" data-title="Revisión" data-text="Definir objetivos para seguir evolucionando." data-bar="100%">
+                  <span>04</span>
+                  <em>Etapa activa</em>
+                  <div>
+                    <strong>Revisión</strong>
+                  </div>
+                  <i style="--fill:100%"></i>
+                </button>
+              </div>
+
+              <div class="kit-telemetry-display">
+                <small data-telemetry-step>Paso 01</small>
+                <strong data-telemetry-title>Diagnóstico</strong>
+                <p data-telemetry-text>Detectar dónde se pierde tiempo.</p>
+
+                <div class="kit-telemetry-meter">
+                  <span>Progreso del entrenamiento</span>
+                  <div><i data-telemetry-bar style="width:72%"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="kit-course-sheet">
+            <div class="kit-sheet-top">
+              <strong>Advanced</strong>
+              <span>Ficha del curso</span>
+            </div>
+
+            <div class="kit-sheet-grid">
+              <div>
+                <small>Duración</small>
+                <p>8 semanas</p>
+              </div>
+              <div>
+                <small>Nivel</small>
+                <p>Élite</p>
+              </div>
+              <div>
+                <small>Modalidad</small>
+                <p>Coaching 1:1</p>
+              </div>
+              <div>
+                <small>Enfoque</small>
+                <p>Telemetría</p>
+              </div>
+            </div>
+<div class="kit-sheet-price">
+              <div>
+                <span>Precio total</span>
+                <strong>$160.000</strong>
+              </div>
+              <div>
+                <span>Transferencia</span>
+                <strong>$128.000</strong>
+              </div>
+            </div>
+
+            <a href="#">Inscribirme</a>
+          </aside>
+        </div>
+      </div>
+
+      <div class="cards-group">
+        <div class="cards-group-head">
+          <span>Cards de testimonio</span>
+          <p>Usadas en el carrusel de experiencias.</p>
+        </div>
+        <div class="kit-testimonials-loop" aria-label="Carrusel de testimonios">
+          <div class="kit-testimonials-track">
+
+            <article class="kit-testimonial-card">
+              <span>01</span>
+              <p>“Aprendí a entender mis errores vuelta por vuelta. Antes solo intentaba ir más rápido, ahora sé exactamente dónde estoy perdiendo tiempo.”</p>
+              <div>
+                <h3>Martín López</h3>
+                <small>Curso Advanced</small>
+              </div>
+            </article>
+
+            <article class="kit-testimonial-card">
+              <span>02</span>
+              <p>“La comparación de telemetría me cambió completamente la manera de entrenar. Empecé a ser mucho más constante en tandas largas.”</p>
+              <div>
+                <h3>Sofía Lopez</h3>
+                <small>Entrenamiento 1:1</small>
+              </div>
+            </article>
+
+            <article class="kit-testimonial-card">
+              <span>03</span>
+              <p>“El seguimiento del coach fue clave. No era solo bajar tiempos, era entender por qué tomaba cada decisión dentro de la pista.”</p>
+              <div>
+                <h3>Tomás Vidal</h3>
+                <small>Sim Racing Pro</small>
+              </div>
+            </article>
+
+            <article class="kit-testimonial-card">
+              <span>04</span>
+              <p>“Me ayudó muchísimo para competir con más seguridad. La práctica de clasificación bajo presión fue de las partes que más me sirvió.”</p>
+              <div>
+                <h3>Lucía Fernández</h3>
+                <small>Programa Élite</small>
+              </div>
+            </article>
+
+            <article class="kit-testimonial-card" aria-hidden="true">
+              <span>01</span>
+              <p>“Aprendí a entender mis errores vuelta por vuelta. Antes solo intentaba ir más rápido, ahora sé exactamente dónde estoy perdiendo tiempo.”</p>
+              <div>
+                <h3>Martín López</h3>
+                <small>Curso Advanced</small>
+              </div>
+            </article>
+
+            <article class="kit-testimonial-card" aria-hidden="true">
+              <span>02</span>
+              <p>“La comparación de telemetría me cambió completamente la manera de entrenar. Empecé a ser mucho más constante en tandas largas.”</p>
+              <div>
+                <h3>Sofía Lopez</h3>
+                <small>Entrenamiento 1:1</small>
+              </div>
+            </article>
+
+            <article class="kit-testimonial-card" aria-hidden="true">
+              <span>03</span>
+              <p>“El seguimiento del coach fue clave. No era solo bajar tiempos, era entender por qué tomaba cada decisión dentro de la pista.”</p>
+              <div>
+                <h3>Tomás Vidal</h3>
+                <small>Sim Racing Pro</small>
+              </div>
+            </article>
+
+            <article class="kit-testimonial-card" aria-hidden="true">
+              <span>04</span>
+              <p>“Me ayudó muchísimo para competir con más seguridad. La práctica de clasificación bajo presión fue de las partes que más me sirvió.”</p>
+              <div>
+                <h3>Lucía Fernández</h3>
+                <small>Programa Élite</small>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="imagenes">
+      <div class="section-label"><span></span><p>04 Imágenes</p></div>
+      <h2>Tratamiento de imágenes</h2>
+      <p class="section-lead">Las imágenes combinan realismo, contraste y acentos de color para construir una atmósfera inmersiva.</p>
+
+      <div class="image-treatment-grid">
+        <article class="image-card image-bw">
+          <img src="./img/hero-home.png" alt="Sim racing hero" />
+          <h3>Blanco y negro con acento</h3>
+          <p>Contraste alto y foco amarillo para enfatizar acción.</p>
+        </article>
+        <article class="image-card image-product">
+          <img src="./img/volante-base.png" alt="Volante sim racing" />
+          <h3>Objeto sin fondo</h3>
+          <p>Producto aislado para destacar detalle técnico.</p>
+        </article>
+        <article class="image-card image-circuit">
+          <img src="./img/advanced-hero.jpg" alt="Simulador avanzado" />
+          <h3>Fondo inmersivo</h3>
+          <p>Oscuridad, profundidad y foco sobre la pantalla.</p>
+        </article>
+        <article class="image-card image-mobile">
+          <img src="./img/pilar-competicion.png" alt="Competición" />
+          <h3>Recorte responsive</h3>
+          <p>En mobile se prioriza el sujeto y la información clave.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="interacciones">
+      <div class="section-label"><span></span><p>05 Interacciones</p></div>
+      <h2>Movimiento e interacción</h2>
+      <p class="section-lead">
+        Las interacciones reales de APEX acompañan el recorrido: orientan, revelan información y refuerzan la sensación de precisión técnica del sim racing.
+      </p>
+
+      <div class="real-interaction-grid">
+
+        <article class="real-interaction-card loader-interaction">
+          <div class="real-interaction-copy">
+            <span>01</span>
+            <h3>Pantalla de carga</h3>
+            <p>Transición negra de entrada y cambio de página, con la marca APEX centrada como elemento principal.</p>
+          </div>
+          <div class="real-loader-demo">
+            <img src="./img/marca-apex.png" alt="APEX">
+          </div>
+        </article>
+
+        <article class="real-interaction-card circuit-interaction">
+          <div class="real-interaction-copy">
+            <span>02</span>
+            <h3>Circuito interactivo</h3>
+            <p>Los puntos del circuito abren una card contextual cercana al número, sin abandonar el mapa.</p>
+          </div>
+          <div class="real-circuit-demo" id="realCircuitDemo">
+            <img src="./img/circuito-sobre-apex.png" alt="Circuito Apex">
+            <button type="button" data-title="Telemetría" data-text="Lectura de datos para detectar frenada, aceleración y trazada.">01</button>
+            <button type="button" data-title="Trazadas" data-text="Referencias visuales para mejorar entrada, vértice y salida.">02</button>
+            <button type="button" data-title="Comparativas" data-text="Comparación de vueltas para entender dónde se gana tiempo.">03</button>
+            <button type="button" data-title="Decisiones" data-text="Convertir datos en acciones concretas de carrera.">04</button>
+            <div class="real-circuit-popup">
+              <h4>Telemetría</h4>
+              <p>Lectura de datos para detectar frenada, aceleración y trazada.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="real-interaction-card telemetry-interaction">
+          <div class="real-interaction-copy">
+            <span>03</span>
+            <h3>Panel de telemetría</h3>
+            <p>En Advanced, cada etapa activa un dato distinto y completa la barra de progreso del entrenamiento.</p>
+          </div>
+
+          <div class="kit-mini-telemetry-demo" data-kit-telemetry-demo>
+            <div class="kit-telemetry-steps">
+              <button class="is-active" type="button" data-step="Paso 01" data-title="Diagnóstico" data-text="Lectura inicial de vuelta, frenada, trazada y salida." data-bar="72%">
+                <span>01</span><em>Etapa activa</em><div><strong>Diagnóstico</strong></div><i style="--fill:72%"></i>
+              </button>
+              <button type="button" data-step="Paso 02" data-title="Corrección" data-text="Ajuste por sector para mejorar consistencia." data-bar="58%">
+                <span>02</span><em>Etapa activa</em><div><strong>Corrección</strong></div><i style="--fill:58%"></i>
+              </button>
+              <button type="button" data-step="Paso 03" data-title="Simulación" data-text="Ritmo de carrera y control bajo presión." data-bar="84%">
+                <span>03</span><em>Etapa activa</em><div><strong>Simulación</strong></div><i style="--fill:84%"></i>
+              </button>
+              <button type="button" data-step="Paso 04" data-title="Revisión" data-text="Objetivos personalizados y evolución." data-bar="100%">
+                <span>04</span><em>Etapa activa</em><div><strong>Revisión</strong></div><i style="--fill:100%"></i>
+              </button>
+            </div>
+
+            <div class="kit-telemetry-display">
+              <small data-telemetry-step>Paso 01</small>
+              <strong data-telemetry-title>Diagnóstico</strong>
+              <p data-telemetry-text>Lectura inicial de vuelta, frenada, trazada y salida.</p>
+
+              <div class="kit-telemetry-meter">
+                <span>Progreso del entrenamiento</span>
+                <div><i data-telemetry-bar style="width:72%"></i></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="real-interaction-card wheel-interaction">
+          <div class="real-interaction-copy">
+            <span>04</span>
+            <h3>Volante interactivo</h3>
+            <p>Los cuadraditos señalan zonas explorables del volante y activan un texto explicativo.</p>
+          </div>
+          <div class="real-wheel-demo" id="realWheelDemo">
+            <div class="real-wheel-visual">
+              <img src="./img/volante-base.png" alt="Volante de sim racing">
+              <button type="button" data-zone="screen"> </button>
+              <button type="button" data-zone="left"> </button>
+              <button type="button" data-zone="right"> </button>
+              <button type="button" data-zone="bottom"> </button>
+            </div>
+            <div class="real-wheel-panel">
+              <span>Interacción guiada</span>
+              <h4>Explorá el volante</h4>
+              <p>Tocá cada zona para ver su función dentro del simulador.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="real-interaction-card program-interaction">
+          <div class="real-interaction-copy">
+            <span>05</span>
+            <h3>Clase a clase</h3>
+            <p>En Advanced, la pantalla queda fija y las clases se desplazan horizontalmente con el scroll.</p>
+          </div>
+          <div class="real-program-demo" id="realProgramDemo">
+            <div class="real-program-track">
+              <article>
+                <strong>01</strong>
+                <h4>Fundamentos de telemetría</h4>
+                <p>Qué datos mirar y por qué son clave.</p>
+              </article>
+              <article>
+                <strong>02</strong>
+                <h4>Lectura de canales</h4>
+                <p>Velocidad, frenado, aceleración y trazadas.</p>
+              </article>
+              <article>
+                <strong>03</strong>
+                <h4>Comparación de vueltas</h4>
+                <p>Diferencias concretas en tiempo y decisión.</p>
+              </article>
+              <article>
+                <strong>04</strong>
+                <h4>Técnica de frenado</h4>
+                <p>Presión, liberación y entrada en curva.</p>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article class="real-interaction-card coach-interaction">
+          <div class="real-interaction-copy">
+            <span>06</span>
+            <h3>Accordion de coaches</h3>
+            <p>Los coaches se presentan en paneles expandibles para mostrar imagen, rol y especialidad.</p>
+          </div>
+          <div class="kit-coach-accordion" id="realCoachDemo" data-active="0">
+            <article class="kit-coach-panel is-active">
+              <button class="kit-coach-trigger" type="button" aria-label="Ver información de Bautista Comino">
+                <div class="kit-coach-image">
+                  <img src="./img/coach-facundo.png" alt="Bautista Comino">
+                </div>
+                <div class="kit-coach-top">
+                  <span>Coach</span>
+                  <span>Diez años de experiencia</span>
+                </div>
+                <div class="kit-coach-content">
+                  <h4>Bautista<br>Comino</h4>
+                  <p>Especializado en técnica de conducción y rendimiento.</p>
+                </div>
+              </button>
+            </article>
+
+            <article class="kit-coach-panel">
+              <button class="kit-coach-trigger" type="button" aria-label="Ver información de Lucia Di Prinzio">
+                <div class="kit-coach-image">
+                  <img src="./img/coach-lucia.png" alt="Lucia Di Prinzio">
+                </div>
+                <div class="kit-coach-top">
+                  <span>Coach</span>
+                  <span>Telemetría avanzada</span>
+                </div>
+                <div class="kit-coach-content">
+                  <h4>Lucia<br>Di Prinzio</h4>
+                  <p>Especializada en lectura de datos, consistencia y mejora progresiva.</p>
+                </div>
+              </button>
+            </article>
+
+            <article class="kit-coach-panel">
+              <button class="kit-coach-trigger" type="button" aria-label="Ver información de Delfina Bianchi">
+                <div class="kit-coach-image">
+                  <img src="./img/coach-delfina.png" alt="Delfina Bianchi">
+                </div>
+                <div class="kit-coach-top">
+                  <span>Coach</span>
+                  <span>Estrategia de carrera</span>
+                </div>
+                <div class="kit-coach-content">
+                  <h4>Delfina<br>Bianchi</h4>
+                  <p>Especializada en estrategia, ritmo de carrera y toma de decisiones.</p>
+                </div>
+              </button>
+            </article>
+
+            <article class="kit-coach-panel">
+              <button class="kit-coach-trigger" type="button" aria-label="Ver información de Mauricio Bacarini">
+                <div class="kit-coach-image">
+                  <img src="./img/coach-mauricio.png" alt="Mauricio Bacarini">
+                </div>
+                <div class="kit-coach-top">
+                  <span>Coach</span>
+                  <span>Preparación competitiva</span>
+                </div>
+                <div class="kit-coach-content">
+                  <h4>Mauricio<br>Bacarini</h4>
+                  <p>Especializado en entrenamiento competitivo y clasificación bajo presión.</p>
+                </div>
+              </button>
+            </article>
+          </div>
+        </article>
+
+        <article class="real-interaction-card gallery-interaction">
+          <div class="real-interaction-copy">
+            <span>07</span>
+            <h3>Galería de circuitos</h3>
+            <p>La galería horizontal permite recorrer circuitos reales y mostrar datos al hacer hover.</p>
+          </div>
+          <div class="real-gallery-demo" id="realGalleryDemo">
+            <button class="real-gallery-prev" type="button">←</button>
+            <div class="real-gallery-strip">
+              <figure>
+                <img src="./img/silverstone.jpg" alt="Silverstone">
+                <figcaption><strong>Silverstone</strong><span>Reino Unido</span></figcaption>
+              </figure>
+              <figure>
+                <img src="./img/montecarlo.jpg" alt="Montecarlo">
+                <figcaption><strong>Monaco</strong><span>Mónaco</span></figcaption>
+              </figure>
+              <figure>
+                <img src="./img/suzuka.jpg" alt="Suzuka">
+                <figcaption><strong>Suzuka</strong><span>Japón</span></figcaption>
+              </figure>
+            </div>
+            <button class="real-gallery-next" type="button">→</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="uk-footer">
+    <img src="./img/marca-apex.png" alt="APEX" />
+    <a href="index.html#top" class="uk-btn">Volver al sitio</a>
+  </footer>
+
+  <script src="./ui-kit.js"></script>
+</body>
+</html>
